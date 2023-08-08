@@ -5,6 +5,7 @@ class DogsController < ApplicationController
         name: params[:name],
         age: params[:age],
         breed: params[:breed],
+        user_id: current_user.id,
       )
       dog.save
       render json: { success: "Dog added to database" }
